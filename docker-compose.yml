@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+    image: blest-web
+    # para evitar conflictos con apache
+    ports:
+      - "5173:80"
+      - "5443:443"
+    volumes:
+      - ./certs:/etc/nginx/certs
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
