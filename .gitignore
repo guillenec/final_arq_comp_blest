@@ -26,3 +26,6 @@ dist-ssr
 certs/*.pem
 certs/*.key
 certs/*.crt
+
+src/firebase/config.ts
+src/firebase/config.js
