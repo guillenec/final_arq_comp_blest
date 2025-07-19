@@ -3,7 +3,7 @@ import CardBasic from "../../components/CardBasic/CardBasic"
 const Products = () => {
   const product1 = { 
     name:"Long Chair", 
-    price:2400, 
+    price:24000, 
     id:"23432252",
     images: {
       image1: "https://res.cloudinary.com/dpiwmbsog/image/upload/v1751235999/blest-shop/buzo_c_capucha/wxdk6hrnzhxu2g9dj5xh.png",

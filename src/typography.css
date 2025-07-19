@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-@import "tailwindcss";
-
 :root {
   --font-anton: "Anton", sans-serif;
   --font-roboto: "Roboto", sans-serif;
-}
-
-@theme {
-  --font-roboto: "Roboto", sans-serif;
-  --font-anton: "Anton", sans-serif;
 }
