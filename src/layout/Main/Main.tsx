@@ -7,12 +7,10 @@ type Props = {
 
 const Main = ({children}: Props) => {
   return (
-    <main className='w-screen h-screen min-h-[500px] bg-[#f3f0e3] flex flex-col items-center justify-between gap-4'>
+    <main className='w-full min-h-[700px] h-full bg-[#f3f0e3] flex flex-col items-center justify-between gap-4'>
       <Header />
       {/* Main content goes here */}
-      <div className='w-full h-full flex items-center justify-center'>
       {children}
-      </div>
       {/* Footer goes here */}
       <Footer />
     </main>
