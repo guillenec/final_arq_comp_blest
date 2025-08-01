@@ -3,12 +3,17 @@ import CardBasic from "../../components/CardBasic/CardBasic"
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import type { Product } from "../../types/Products";
+import CardSkeleton from "../../components/CardSkeleton/CardSkeleton";
 
 const ListProducts = () => {
   const [products, setProducts] = useState<Product[]>([]); // Assuming you will fetch products later
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+  
     const fetchProducts = async () => {
+
+      try {
       const querySnapshot = await getDocs(collection(db, "buzos_con_capucha_round"));
       const fetchedProducts:Product[] = [];
       querySnapshot.forEach((doc) => {
@@ -19,6 +24,13 @@ const ListProducts = () => {
       });
 
       setProducts(fetchedProducts);
+      }
+      catch (error) {
+        console.error("Error fetching products: ", error);
+      } finally {
+        setLoading(false); //siempre que no haya un error, se setea loading a false
+      }
+      
     };
 
     fetchProducts();
@@ -30,9 +42,16 @@ const ListProducts = () => {
     <h1 className='text-4xl font-bold text-[#b1182e]'>Products</h1>    
     {/* <CardBasic {...product1}/> */}
     <div className="flex flex-wrap justify-center gap-4 p-4">
-      {products.map((product) => (
-        <CardBasic key={product.id} {...product} />
-      ))}
+      {
+      loading
+        ? 
+        Array.from({ length: 8 }).map((_, index) => (
+          <CardSkeleton key={index} />
+        ))
+        : products.map((product) => (
+          <CardBasic key={product.id} {...product} />
+        ))
+      }
     </div>
 
   </main>  )
