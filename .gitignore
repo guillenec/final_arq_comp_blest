@@ -27,6 +27,6 @@ certs/*.pem
 certs/*.key
 certs/*.crt
 
-src/firebase/*
-src/firebase/config.ts
-src/firebase/config.js
+# src/firebase/*
+# src/firebase/config.ts
+# src/firebase/config.js

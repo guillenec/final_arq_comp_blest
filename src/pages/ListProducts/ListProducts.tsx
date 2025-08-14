@@ -9,6 +9,7 @@ const ListProducts = () => {
   const [products, setProducts] = useState<Product[]>([]); // Assuming you will fetch products later
   const [loading, setLoading] = useState<boolean>(true);
 
+
   useEffect(() => {
   
     const fetchProducts = async () => {
