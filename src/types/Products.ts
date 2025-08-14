@@ -1,3 +1,5 @@
+import type { Timestamp } from "firebase/firestore/lite";
+
 type Talle = {
   s: number;
   m: number;
@@ -16,8 +18,17 @@ export type Product = {
   id: string;
   name: string;
   price: number;
-  description: string;
+  description?: string;
   images: Images_serv;
   tipo: string;
   talle: Talle;
+  cuotas?: number;
+  categoria?: string;
+  fecha: Timestamp;
 };
+
+export type CartItem = {
+  producto: Product;
+  qty:number;
+  size?:keyof Talle; 
+}
