@@ -5,9 +5,31 @@
 :root {
   --font-anton: "Anton", sans-serif;
   --font-roboto: "Roboto", sans-serif;
+  --color-red-blest: #b1182e;
+  --color-crem-blest: #f3f0e3;
+  --custom-yellow-blest: #eee0a1;
+  --custom-white-blest: #ffffff;
+  --color-black-blest: #21201f;
+  --color-grey-blest: #B1B2B5;
+  --color-green-blest: #283732;
 }
 
 @theme {
   --font-roboto: "Roboto", sans-serif;
   --font-anton: "Anton", sans-serif;
+}
+
+
+.button_gen_nav {
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow:  12px 12px 27px #d6d6d6,
+              -12px -12px 27px #ffffff;
+
+  &:hover {
+    background: var(--color-red-blest);
+    color: var(--custom-yellow-blest);
+    box-shadow:  6px 5px 10px var(--color-red-blest),
+              -12px -12px 27px #ffffff;
+  }
 }
